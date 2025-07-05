@@ -1,0 +1,14 @@
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\bin\Debug\net8.0\MaxHotel.exe
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\bin\Debug\net8.0\MaxHotel.deps.json
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\bin\Debug\net8.0\MaxHotel.runtimeconfig.json
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\bin\Debug\net8.0\MaxHotel.dll
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\bin\Debug\net8.0\MaxHotel.pdb
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\MaxHotel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\MaxHotel.AssemblyInfoInputs.cache
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\MaxHotel.AssemblyInfo.cs
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\MaxHotel.csproj.CoreCompileInputs.cache
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\MaxHotel.dll
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\refint\MaxHotel.dll
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\MaxHotel.pdb
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\MaxHotel.genruntimeconfig.cache
+C:\Users\jose.santos\Documents\VS_CODE\dio-one\bootcamp-c#\MaxHotel\MaxHotel\obj\Debug\net8.0\ref\MaxHotel.dll
