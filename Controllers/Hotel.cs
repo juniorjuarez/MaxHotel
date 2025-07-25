@@ -1,16 +1,20 @@
 namespace MaxHotel.Controllers
 {
     using System;
-    using MaxHotel.View;
+    using System.IO;                // <-- ADICIONE PARA MANIPULAR ARQUIVOS
+    using System.Text.Json;
     using MaxHotel.Models;
-    using System.Linq;
-    using System.ComponentModel;
+
 
     public class Hotel
     {
 
+        private const string DbHotel = "DbHotel.json";
+
         private List<Suite> suitesDisponiveis = new List<Suite>();
         private List<Reserva> reservasFeitas = new List<Reserva>();
+
+
 
 
         public void LitaSuitesDisponiveis()
@@ -78,6 +82,7 @@ namespace MaxHotel.Controllers
 
                                 reservasFeitas.Add(novaReserva);
                                 suiteSelecionada.Disponivel = false;
+                                SalvarDados();
 
                                 decimal valorFinal = novaReserva.CalcularValorTotal();
 
@@ -145,6 +150,7 @@ namespace MaxHotel.Controllers
 
                     reservaCheckout.Suite.Disponivel = true;
                     reservasFeitas.Remove(reservaCheckout);
+                    SalvarDados();
 
                     Console.WriteLine("Checkout realizado, volte sempre.");
                 }
@@ -157,6 +163,7 @@ namespace MaxHotel.Controllers
             {
                 Console.WriteLine("Entrada inválida. Por favor, digite um número.");
             }
+
 
             Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
             Console.ReadKey();
@@ -190,17 +197,64 @@ namespace MaxHotel.Controllers
             Console.ReadKey();
         }
 
-        public static void Start()
+        public void SalvarDados()
         {
+            var dadosParaSalvar = new DadosHotel
+            {
+                Suites = suitesDisponiveis,
+                Reservas = reservasFeitas
+            };
+            string jsonString = JsonSerializer.Serialize(dadosParaSalvar, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(DbHotel, jsonString);
+        }
+
+        public void CarregaDados()
+        {
+            if (File.Exists(DbHotel))
+            {
+
+                string jsonString = File.ReadAllText(DbHotel);
+
+                if (string.IsNullOrEmpty(jsonString)) return;
+
+
+
+                DadosHotel dadosCarregados = JsonSerializer.Deserialize<DadosHotel>(jsonString);
+
+                if (CarregaDados != null)
+                {
+                    suitesDisponiveis = dadosCarregados.Suites;
+                    reservasFeitas = dadosCarregados.Reservas;
+
+                    foreach (var reserva in reservasFeitas)
+                    {
+                        Suite suiteOriginal = suitesDisponiveis.FirstOrDefault(s => s.Numero == reserva.Suite.Numero);
+                        if (suiteOriginal != null)
+                        {
+                            reserva.Suite = suiteOriginal;
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                File.Create(DbHotel).Close();
+            }
 
         }
 
         public Hotel()
         {
+            CarregaDados();
+            if (!suitesDisponiveis.Any())
+            {
+                suitesDisponiveis.Add(new Suite(101, "Luxo", true, 500.00m, 2));
+                suitesDisponiveis.Add(new Suite(201, "Standard", true, 300.00m, 3));
+                suitesDisponiveis.Add(new Suite(301, "Econômica", true, 200.00m, 4));
 
-            suitesDisponiveis.Add(new Suite(101, "Luxo", true, 500.00m, 2));
-            suitesDisponiveis.Add(new Suite(201, "Standard", true, 300.00m, 3));
-            suitesDisponiveis.Add(new Suite(301, "Econômica", true, 200.00m, 4));
+            }
+
         }
     }
 }

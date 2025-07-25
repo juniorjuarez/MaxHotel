@@ -1,0 +1,45 @@
+{
+  "Suites": [
+    {
+      "Numero": 101,
+      "Tipo": "Luxo",
+      "PrecoDiaria": 500.00,
+      "Disponivel": false,
+      "Capacidade": 2
+    },
+    {
+      "Numero": 201,
+      "Tipo": "Standard",
+      "PrecoDiaria": 300.00,
+      "Disponivel": true,
+      "Capacidade": 3
+    },
+    {
+      "Numero": 301,
+      "Tipo": "Econ\u00F4mica",
+      "PrecoDiaria": 200.00,
+      "Disponivel": true,
+      "Capacidade": 4
+    }
+  ],
+  "Reservas": [
+    {
+      "Hospedes": [
+        {
+          "Nome": "jose"
+        },
+        {
+          "Nome": "manu"
+        }
+      ],
+      "Suite": {
+        "Numero": 101,
+        "Tipo": "Luxo",
+        "PrecoDiaria": 500.00,
+        "Disponivel": false,
+        "Capacidade": 2
+      },
+      "DiasReserva": 2
+    }
+  ]
+}
